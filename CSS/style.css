@@ -22,21 +22,18 @@
 
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
+
+
 
 /* Navbar */
 .navbar {
     background-color: #3F3DBE;
     padding: 15px 30px;
 }
-
-/* .navbar-brand img {
-    width: auto;
-    height: auto;
-} */
 
 .navbar-brand img {
     height: 40px;
@@ -46,17 +43,35 @@ body {
     color: white !important;
     font-weight: bold;
     margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-analogous-color2) !important;
+    text-decoration: none;
 }
 
 .navbar-toggler {
+    position: relative;
     border: none;
+    outline: none;
+    
 }
 
+.navbar-toggler-icon,
+.close-icon {
+    transition: opacity 0.3s ease;
+}
+
+.close-icon {
+    font-size: 1.5rem;
+}
 
 
 
 
 /* Hero */
+
 .hero {
     position: relative;
     /* overflow: hidden; */
@@ -89,7 +104,7 @@ body {
     max-width: 50%;
     color: white;
     text-align: left;
-    margin-bottom: 50px;
+    margin-bottom: 50px; 
     margin-left: 40px;
     position: relative;
     z-index: 1;
@@ -105,13 +120,14 @@ body {
 }
 
 .hero-text .btn:hover {
-    background: #e07d2b; /* Manually darkened color */
+    background: transparent; /* Manually darkened color */
     border-color: var(--color-secondary);
 }
 
 
 
 /* Services */
+
 .service {
     padding: 50px 20px;
     border-radius: 10px;
@@ -122,6 +138,7 @@ body {
     height: 414px;
     margin-top: 10px;
     width: 1064px;
+    margin-left: 70px;
 }
 
 .service-card h5{
@@ -163,27 +180,27 @@ body {
 }
 
 .service .service-card .btn:hover {
-    background: #e07d2b; /* Manually darkened color */
+    background: transparent; /* Manually darkened color */
     border-color: var(--color-secondary);
     color: #4F46E5;
 }
 
 
 
-
-
 /* faq */
 
 .faq {
-    padding: 50px 20px;
+   padding-left: 50px 20px; 
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 30px; 
 }
+
 
 .faq .container h2 {
     font-size: 24px;
     color: var(--color-primary);
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .faq .card {
@@ -198,18 +215,22 @@ body {
 .faq .card h5 {
     font-size: 18px;
     position: relative;
+    padding: 15px;
+    margin: 0;
 }
 
 .faq .faq-question {
     display: inline-block;
     cursor: pointer;
+    width: 90%;
 }
 
 .bi-plus,
 .bi-dash {
     position: absolute;
-    top: 0;
-    right: 0.5px;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -217,7 +238,7 @@ body {
 
 .faq-answer {
     display: none;
-    padding-top: 10px;
+    padding: 0 15px 15px 15px;
 }
 
 .faq-answer p {
@@ -241,24 +262,61 @@ body {
 }
 
 
-
 .faq .card:not(.active) .faq-question {
     color: #333;
 }
+
+
+
+
+/* Footer */
+
+footer {
+    background: var(--color-primary);
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer .detail h1,h2,h3,h4,h5,h6,p {
+    text-decoration: none;
+    text-align: left;
+}
+
+footer .detail a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+footer .detail a:hover {
+    color: var(--color-analogous-color2) !important;
+}
+
+.copyright a {
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: var(--color-analogous-color2) !important;
+}
+
+
+
 
 /* Responsive Styles */
 
 @media (max-width: 1440px) {
     .hero .hero-text {
         max-width: 60%;
-        /* Increase width for larger screens */
     }
 
     .service .service-card {
         width: 100%;
-        /* Ensure it fits within the container */
         height: auto;
-        /* Allow flexibility */
     }
 
     .service-card .text-left,
@@ -266,27 +324,19 @@ body {
     .service-card .image-left,
     .service-card .image-right {
         width: 50%;
-        /* Keep a balanced layout */
     }
 }
 
 @media (max-width: 1200px) {
-
-    /* Hero Section */
     .hero .hero-text {
         max-width: 70%;
-        /* Adjust width for better readability */
         margin-left: 20px;
-        /* Reduce left margin */
         padding: 20px;
     }
 
-    /* Services Section */
     .service .service-card {
         width: 100%;
-        /* Ensure it fits within the container */
         height: auto;
-        /* Allow flexibility */
     }
 
     .service-card .text-left,
@@ -294,25 +344,20 @@ body {
     .service-card .image-left,
     .service-card .image-right {
         width: 50%;
-        /* Keep a balanced layout */
     }
 
-    /* Reduce Navbar Padding */
     .navbar {
         padding: 10px 20px;
     }
 
-    /* Adjust Navbar Links */
     .navbar-nav .nav-link {
         font-size: 14px;
-        /* Reduce text size */
+      
         margin: 0 10px;
     }
 
-    /* Hero Image */
     .hero-image {
         height: 500px;
-        /* Slightly reduce height */
     }
 
     .hero-image img {
@@ -324,10 +369,8 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Navbar Adjustments */
     .navbar {
         padding: 10px 15px;
-        /* Reduce padding for better spacing */
     }
 
 
@@ -335,7 +378,6 @@ body {
         margin-bottom: 10px;
     }
 
-    /* Hero Section */
     .hero .hero-text {
         max-width: 100%;
         text-align: center;
@@ -345,7 +387,6 @@ body {
 
     .hero-text h1 {
         font-size: 22px;
-        /* Reduce font size for better readability */
     }
 
     .hero-text .btn {
@@ -355,7 +396,6 @@ body {
 
     .hero-image {
         height: 400px;
-        /* Adjust hero image height */
     }
 
     .hero-image img {
@@ -363,13 +403,31 @@ body {
         object-fit: cover;
     }
 
-   
+    .faq .container h2 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .faq .card h5 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+    }
+
+    .bi-plus,
+    .bi-dash {
+        font-size: 20px;
+    }
+
+
 }
 
 
 @media (max-width: 375px) {
 
-    /* Navbar Adjustments */
     .navbar {
         padding: 8px 10px;
     }
@@ -386,7 +444,6 @@ body {
         padding: 5px 8px;
     }
 
-    /* Hero Section */
     .hero .hero-text {
         max-width: 100%;
         text-align: center;
@@ -413,7 +470,6 @@ body {
         object-fit: cover;
     }
 
-    /* Services Section */
     .service {
         padding: 30px 10px;
     }
@@ -439,12 +495,12 @@ body {
 
     .service-card img {
         max-width: 70%;
-        margin-bottom: 8px; /* Ensures a gap between the image and text */
+        margin-bottom: 8px;
     }
 
     .service-card h5 {
         font-size: 16px;
-        margin-top: 8px; /* Ensures some space between the image and the title */
+        margin-top: 8px; 
     }
 
     .service-card p {
