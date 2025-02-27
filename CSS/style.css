@@ -290,6 +290,7 @@ footer .detail a:hover {
     color: var(--color-analogous-color2) !important;
 }
 
+
 .copyright a {
     color: white;
     transition: var(--transition);
@@ -334,7 +335,6 @@ footer .detail a:hover {
 @media (max-width: 768px) {
     .hero .hero-text {
         max-width: 100%;
-        text-align: center;
         margin: 0;
         padding: 15px;
     }
