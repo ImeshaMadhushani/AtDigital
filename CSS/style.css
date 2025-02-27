@@ -245,9 +245,6 @@ body {
         /* Reduce padding for better spacing */
     }
 
-    .navbar-nav {
-        text-align: center;
-    }
 
     .navbar-nav .nav-item {
         margin-bottom: 10px;
