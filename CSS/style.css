@@ -6,7 +6,7 @@
     --color-triadic-color1: #52378C;
     --color-dark: #4DCA79;
     --color-text-color: #2F2F2F;
-    --color-text-color-light:#545A75;
+    --color-text-color-light: #545A75;
     --color-text-color-subtle: #9C9991;
     --color-accent-color: #E2F2FE;
     --color-accent-color2: #FFF8E0;
@@ -22,12 +22,10 @@
 
 /* General Styles */
 body {
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
-
-
 
 /* Navbar */
 .navbar {
@@ -43,19 +41,16 @@ body {
     color: white !important;
     font-weight: bold;
     margin: 0 15px;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .navbar-nav .nav-link:hover {
     color: var(--color-analogous-color2) !important;
-    text-decoration: none;
 }
 
 .navbar-toggler {
-    position: relative;
     border: none;
     outline: none;
-    
 }
 
 .navbar-toggler-icon,
@@ -69,12 +64,11 @@ body {
 
 
 
-
 /* Hero */
+
 
 .hero {
     position: relative;
-    /* overflow: hidden; */
 }
 
 .hero .container {
@@ -83,7 +77,7 @@ body {
 
 .hero-image {
     width: 100%;
-    height: 600px;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -98,13 +92,12 @@ body {
 }
 
 .hero .hero-text {
-    border: 1px solid transparent;
     background: linear-gradient(to right, #4dca79, #1cbddd);
     padding: 25px;
     max-width: 50%;
     color: white;
     text-align: left;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
     margin-left: 40px;
     position: relative;
     z-index: 1;
@@ -120,79 +113,86 @@ body {
 }
 
 .hero-text .btn:hover {
-    background: transparent; /* Manually darkened color */
+    background: transparent;
     border-color: var(--color-secondary);
 }
 
 
 
-/* Services */
+
+/* Service */
+
 
 .service {
-    padding: 50px 20px;
-    border-radius: 10px;
-    margin-top: 50px;
+    padding: 50px 0;
+    background: #fff;
+    margin: 50px;
 }
 
-.service .service-card {
-    height: 414px;
-    margin-top: 10px;
+.service-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
-.service-card h5{
-    font-size: 24px;
-    color: var(--color-primary);
+.service-card.reverse {
+    flex-direction: row-reverse;
 }
 
-.service-card .text-left {
+.service-image {
+    width: 40%;
+}
+
+.service-image img {
+    width: 65%;
+    height: auto;
+}
+
+.service-text {
     width: 50%;
-    float: left;
-    padding-right: 40px;
-    text-align: left;
 }
 
-.service-card .text-right {
-    width: 50%;
-    float: right;
-    padding-left: 40px;
-    text-align: left;
+.service-text h5 {
+    font-size: 22px;
+    color: #3b3b98;
+    font-weight: bold;
 }
 
-.service .service-card .image-left {
-    width: 50%;
-    float: left;
-}
-
-.service .service-card .image-right {
-    width: 50%;
-    float: right;
-}
-
-.service .service-card .btn {
-    background: var(--color-secondary);
-    border: 1px solid transparent;
-    padding: 10px 20px;
+.service-text p {
     font-size: 16px;
-    cursor: pointer;
-    transition: var(--transition);
+    color: #555;
+    line-height: 1.6;
 }
 
-.service .service-card .btn:hover {
-    background: transparent; /* Manually darkened color */
-    border-color: var(--color-secondary);
-    color: #4F46E5;
+.service-text .btn {
+    background: var(--color-secondary);
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.service-text .btn:hover {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 
 
-/* faq */
+/* FAQ */
+
 
 .faq {
-   padding-left: 50px 20px; 
+    padding: 50px 20px;
     border-radius: 10px;
-    margin-top: 30px; 
+    margin-top: 30px;
 }
-
 
 .faq .container h2 {
     font-size: 24px;
@@ -206,15 +206,15 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: left;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     background-color: #fff;
 }
 
 .faq .card h5 {
     font-size: 18px;
-    position: relative;
     padding: 15px;
     margin: 0;
+    position: relative;
 }
 
 .faq .faq-question {
@@ -231,7 +231,7 @@ body {
     transform: translateY(-50%);
     font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .faq-answer {
@@ -256,14 +256,7 @@ body {
 
 .faq .card.active .bi-plus {
     display: none;
-    color: var(--color-primary);
 }
-
-
-.faq .card:not(.active) .faq-question {
-    color: #333;
-}
-
 
 
 
@@ -277,15 +270,20 @@ footer {
     margin-top: 50px;
 }
 
-footer .detail h1,h2,h3,h4,h5,h6,p {
-    text-decoration: none;
+footer .detail h1,
+footer .detail h2,
+footer .detail h3,
+footer .detail h4,
+footer .detail h5,
+footer .detail h6,
+footer .detail p {
     text-align: left;
 }
 
 footer .detail a {
     text-decoration: none;
     color: white;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 footer .detail a:hover {
@@ -294,7 +292,7 @@ footer .detail a:hover {
 
 .copyright a {
     color: white;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     text-decoration: none;
 }
 
@@ -302,28 +300,15 @@ footer .detail a:hover {
     color: var(--color-analogous-color2) !important;
 }
 
-
-
-
 /* Responsive Styles */
+
 
 @media (max-width: 1440px) {
     .hero .hero-text {
         max-width: 60%;
     }
-
-    .service .service-card {
-        width: 100%;
-        height: auto;
-    }
-
-    .service-card .text-left,
-    .service-card .text-right,
-    .service-card .image-left,
-    .service-card .image-right {
-        width: 50%;
-    }
 }
+
 
 @media (max-width: 1200px) {
     .hero .hero-text {
@@ -332,50 +317,21 @@ footer .detail a:hover {
         padding: 20px;
     }
 
-    .service .service-card {
-        width: 100%;
-        height: auto;
-    }
-
-    .service-card .text-left,
-    .service-card .text-right,
-    .service-card .image-left,
-    .service-card .image-right {
-        width: 50%;
-    }
-
     .navbar {
         padding: 10px 20px;
     }
 
     .navbar-nav .nav-link {
         font-size: 14px;
-      
         margin: 0 10px;
     }
 
     .hero-image {
         height: 500px;
     }
-
-    .hero-image img {
-        height: 100%;
-        object-fit: cover;
-    }
 }
 
-
 @media (max-width: 768px) {
-
-    .navbar {
-        padding: 10px 15px;
-    }
-
-
-    .navbar-nav .nav-item {
-        margin-bottom: 10px;
-    }
-
     .hero .hero-text {
         max-width: 100%;
         text-align: center;
@@ -396,11 +352,6 @@ footer .detail a:hover {
         height: 400px;
     }
 
-    .hero-image img {
-        height: 100%;
-        object-fit: cover;
-    }
-
     .faq .container h2 {
         font-size: 22px;
         margin-bottom: 30px;
@@ -419,13 +370,9 @@ footer .detail a:hover {
     .bi-dash {
         font-size: 20px;
     }
-
-
 }
 
-
 @media (max-width: 375px) {
-
     .navbar {
         padding: 8px 10px;
     }
@@ -434,17 +381,7 @@ footer .detail a:hover {
         height: 30px;
     }
 
-    .navbar-nav .nav-item {
-        margin-bottom: 8px;
-    }
-
-    .navbar-toggler {
-        padding: 5px 8px;
-    }
-
     .hero .hero-text {
-        max-width: 100%;
-        text-align: center;
         padding: 12px;
         margin: 15px auto;
     }
@@ -463,51 +400,20 @@ footer .detail a:hover {
         height: 250px;
     }
 
-    .hero-image img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .service {
-        padding: 30px 10px;
-    }
-
-    .service .service-card {
-        display: flex;
+    .service-card {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+    }
+    
+    .service-card.reverse {
+        flex-direction: column;
+    }
+    
+    .service-image,
+    .service-text {
         width: 100%;
-        height: auto;
-        padding: 15px 5px;
     }
 
-    .service-card .image-left,
-    .service-card .image-right,
-    .service-card .text-left,
-    .service-card .text-right {
-        width: 100%;
-        text-align: center;
-        padding: 0;
-    }
 
-    .service-card img {
-        max-width: 70%;
-        margin-bottom: 8px;
-    }
-
-    .service-card h5 {
-        font-size: 16px;
-        margin-top: 8px; 
-    }
-
-    .service-card p {
-        font-size: 13px;
-        padding: 0 10px;
-    }
-
-    .service-card .btn {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
+ 
 }
