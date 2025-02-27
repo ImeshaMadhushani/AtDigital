@@ -384,6 +384,7 @@ footer .detail a:hover {
     .hero .hero-text {
         padding: 12px;
         margin: 15px auto;
+        text-align: left;
     }
 
     .hero-text h1 {
