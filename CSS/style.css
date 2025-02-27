@@ -296,10 +296,6 @@ body {
         /* Reduce logo size */
     }
 
-    .navbar-nav {
-        text-align: center;
-    }
-
     .navbar-nav .nav-item {
         margin-bottom: 8px;
     }
